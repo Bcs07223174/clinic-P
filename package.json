@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "patient-workspace",
-  "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "patient-main"
-  ],
-  "scripts": {
-    "dev": "cd patient-main && npm run dev",
-    "build": "cd patient-main && npm run build",
-    "start": "cd patient-main && npm run start"
-  }
-}
-=======
   "name": "patient-care-management-system",
   "version": "1.0.0",
   "private": true,
@@ -169,4 +155,3 @@
     }
   }
 }
->>>>>>> 95441377a57bd601a7cc0a2a8df18a27d84fd6d6
