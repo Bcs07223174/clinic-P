@@ -56,8 +56,8 @@ export async function GET() {
     // Get current indexes
     const indexes = await collection.listIndexes().toArray()
     
-    // Get collection stats
-    const stats = await collection.stats()
+    // Get collection stats using db.command (collection.stats() removed in MongoDB driver 6)
+    const stats = await db.command({ collStats: "doctor_schedules" })
     
     // Sample documents to analyze structure
     const sampleDocs = await collection.find({}).limit(5).toArray()

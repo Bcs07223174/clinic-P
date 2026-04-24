@@ -6,9 +6,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CheckCircle, Loader2, Mail, RefreshCw, Shield } from "lucide-react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 
-export default function VerifyOTPPage() {
+function VerifyOTPContent() {
   const [otpCode, setOtpCode] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isResending, setIsResending] = useState(false)
@@ -248,5 +248,13 @@ export default function VerifyOTPPage() {
         </CardContent>
       </Card>
     </div>
+  )
+}
+
+export default function VerifyOTPPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <VerifyOTPContent />
+    </Suspense>
   )
 }
