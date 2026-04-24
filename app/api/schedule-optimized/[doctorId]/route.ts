@@ -64,7 +64,7 @@ export async function GET(request: NextRequest, { params }: { params: { doctorId
           }
         )
 
-      if (schedule?.days?.length > 0) {
+      if (schedule !== null && schedule.days && schedule.days.length > 0) {
         return NextResponse.json({
           ...schedule,
           selectedDay: schedule.days[0],
@@ -103,7 +103,7 @@ export async function GET(request: NextRequest, { params }: { params: { doctorId
           }
         )
 
-      if (schedule?.days?.length > 0) {
+      if (schedule !== null && schedule.days && schedule.days.length > 0) {
         return NextResponse.json({
           ...schedule,
           selectedDay: schedule.days[0],
@@ -139,7 +139,7 @@ export async function GET(request: NextRequest, { params }: { params: { doctorId
           }
         )
 
-      if (schedule?.days?.length > 0) {
+      if (schedule !== null && schedule.days && schedule.days.length > 0) {
         const isWithinRange = date ? checkDateInRange(new Date(date), schedule.weekStart, schedule.weekEnd) : true
         
         return NextResponse.json({

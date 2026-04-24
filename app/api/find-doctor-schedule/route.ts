@@ -19,17 +19,18 @@ export async function GET(request: NextRequest) {
     
     // Log the raw data format for debugging
     if (schedules.length > 0) {
+      const firstSchedule = schedules[0]!
       console.log("Raw schedule data format:", {
-        _id: schedules[0]._id,
-        _idType: typeof schedules[0]._id,
-        doctorId: schedules[0].doctorId,
-        doctorIdType: typeof schedules[0].doctorId,
-        weekStart: schedules[0].weekStart,
-        weekStartType: typeof schedules[0].weekStart,
-        weekEnd: schedules[0].weekEnd,
-        weekEndType: typeof schedules[0].weekEnd,
-        firstDayDate: schedules[0].days?.[0]?.date,
-        firstDayDateType: typeof schedules[0].days?.[0]?.date
+        _id: firstSchedule._id,
+        _idType: typeof firstSchedule._id,
+        doctorId: firstSchedule.doctorId,
+        doctorIdType: typeof firstSchedule.doctorId,
+        weekStart: firstSchedule.weekStart,
+        weekStartType: typeof firstSchedule.weekStart,
+        weekEnd: firstSchedule.weekEnd,
+        weekEndType: typeof firstSchedule.weekEnd,
+        firstDayDate: firstSchedule.days?.[0]?.date,
+        firstDayDateType: typeof firstSchedule.days?.[0]?.date
       })
     }
     

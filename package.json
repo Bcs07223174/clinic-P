@@ -84,6 +84,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.4",
     "cookies-next": "^4.3.0",
+    "critters": "^0.0.25",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.3",
     "embla-carousel-react": "^8.5.1",
